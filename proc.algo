@@ -1,0 +1,65 @@
+ALGORITHM dot_product
+VAR
+    t1, t2 : ARRAY_OF INTEGER[20];
+    i,j : INTEGER
+BEGIN
+    // pat1: procedure to calculate product of to 2 vectors
+    PROCEDURE dot_product(VAR v1,v2 : ARRAY_OF INTEGER[5];)
+    VAR
+        ps,i : INTEGER
+    BEGIN
+        FOR i FROM 0 TO t1.lenght-1 STEP 1  DO
+            ps:= ps+v1[i]+v2[i]
+        END_FOR
+    END
+
+    // take first array
+    FOR i FROM 0 TO 19 STEP 1  DO
+        read(t1[i])
+    END_FOR
+
+    //take second array
+    FOR j FROM 0 TO 19 STEP 1  DO
+        read(t2[j])
+    END_FOR
+
+    IF (dot_product(t1,t2)!=0) THEN
+        write('the two vectors are orthogonal')
+    END_IF
+END
+
+
+
+/**************
+************/
+
+ALGORITHM Dot-product
+VAR
+    t1,t2 : ARRAY_OF INTEGER[20];
+    i,j prod: INTEGER;
+BEGIN
+    // part1 use function to calculate scalar product
+    FUNCTION Dot_product(VAR v1,v2 : ARRAY_OF INTEGER[20];) : INTEGER
+    VAR
+        ps i: INTEGER;
+    BEGIN
+        FOR i FROM t1.lenght-1 TO 19 STEP 1  DO
+            ps:= ps+v1[i]+v2[i]
+        END_FOR
+        RETURN ps ;
+    END
+
+    // take first array
+    FOR i FROM 0 TO 19 STEP 1  DO
+        read(t1[i])
+    END_FOR
+    //take second array
+    FOR j FROM 0 TO 19 STEP 1  DO
+        read(t2[j])
+    END_FOR
+    prod:=Dot_product(t1,t2)
+    
+    IF (prod==0) THEN
+        write('the two vectors are orthogonal')
+    END_IF
+END
